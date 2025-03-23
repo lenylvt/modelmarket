@@ -1,10 +1,19 @@
+'use client';
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { DiscordLogoIcon } from "@radix-ui/react-icons"
+import { signIn } from "@/lib/auth-client"
 
 export default function Home() {
+  const handleDiscordSignIn = async () => {
+    await signIn.social({
+      provider: "discord"
+    });
+  };
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 p-4">
       <Card className="w-full max-w-md shadow-lg border-0">
@@ -13,11 +22,12 @@ export default function Home() {
           <CardDescription className="text-center">Connectez-vous pour accéder au marché des modèles d'IA, des ensembles de données et plus encore</CardDescription>
         </CardHeader>
         <CardContent className="space-y-5">
-          <Button className="w-full bg-[#5865F2] hover:bg-[#4752c4] shadow-sm transition-all" asChild>
-            <Link href="/api/auth/discord" className="flex items-center justify-center">
-              <DiscordLogoIcon className="mr-2 h-5 w-5" />
-              Continuer avec Discord
-            </Link>
+          <Button 
+            className="w-full bg-[#5865F2] hover:bg-[#4752c4] shadow-sm transition-all" 
+            onClick={handleDiscordSignIn}
+          >
+            <DiscordLogoIcon className="mr-2 h-5 w-5" />
+            Continuer avec Discord
           </Button>
 
           <div className="flex items-center space-x-2">
