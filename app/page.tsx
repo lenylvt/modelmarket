@@ -15,7 +15,7 @@ export default function Home() {
 
   useEffect(() => {
     if (data && !isPending) {
-      router.push('/settings');
+      router.push('/dashboard');
     }
   }, [data, isPending, router]);
 
