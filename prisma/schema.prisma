@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -14,6 +13,7 @@ model User {
   email         String
   emailVerified Boolean
   image         String?
+  stripeAccountId String?
   createdAt     DateTime
   updatedAt     DateTime
   sessions      Session[]
