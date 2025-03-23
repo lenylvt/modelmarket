@@ -33,15 +33,11 @@ const navMain = [
     isActive: true,
     items: [
       {
-        title: "À la une",
-        url: "/dashboard",
-      },
-      {
-        title: "Populaire",
+        title: "Demande Populaire",
         url: "/dashboard/popular",
       },
       {
-        title: "Récent",
+        title: "Demande Récente",
         url: "/dashboard/recent",
       },
     ],
